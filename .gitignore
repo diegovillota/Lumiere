@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+-e 
+# Variables de entorno (no subir la API key real)
+.env
