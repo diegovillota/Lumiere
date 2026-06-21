@@ -48,6 +48,7 @@ export default function AddItemForm({ onAdd }) {
           type="number"
           placeholder="2024"
           value={anio}
+          min="0"
           onChange={(e) => setAnio(e.target.value)}
         />
       </div>
