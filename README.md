@@ -43,7 +43,7 @@ Documentada en detalle en `src/services/tmdbApi.js` (funciones `searchTitles` y 
 ## 5. Estructura del proyecto
 
 ```
-cinelog/
+Lumiere/
 ├── index.html
 ├── src/
 │   ├── main.jsx              # punto de entrada

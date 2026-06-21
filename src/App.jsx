@@ -21,7 +21,7 @@ export default function App() {
         {vista === "catalogo" ? <Home catalog={catalog} /> : <Profile stats={catalog.stats} />}
 
         <footer className="app-footer">
-          <span>Nocturno · maqueta v0.1</span>
+          <span>Lumiere · maqueta v0.1</span>
           <span>datos de ejemplo · TMDB pendiente de integrar</span>
         </footer>
       </main>
