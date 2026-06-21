@@ -6,7 +6,13 @@ import EmptyState from "./EmptyState";
  * useCatalog) y renderiza una MovieCard por cada uno. Si no hay
  * resultados, muestra el estado vacío en vez de un grid en blanco.
  */
-export default function CatalogGrid({ items, onToggleEstado, onRemove }) {
+export default function CatalogGrid({
+  items,
+  onToggleEstado,
+  onRemove,
+  onToggleFavorito,
+  onSetNota,
+}) {
   if (items.length === 0) {
     return <EmptyState />;
   }
@@ -19,6 +25,8 @@ export default function CatalogGrid({ items, onToggleEstado, onRemove }) {
           item={item}
           onToggleEstado={onToggleEstado}
           onRemove={onRemove}
+          onToggleFavorito={onToggleFavorito}
+          onSetNota={onSetNota}
         />
       ))}
     </div>

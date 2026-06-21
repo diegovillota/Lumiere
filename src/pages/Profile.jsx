@@ -110,6 +110,10 @@ export default function Profile({ stats }) {
             <strong>{stats.pendientes}</strong>
             <span>pendientes</span>
           </div>
+          <div className="stat">
+            <strong>{stats.favoritos}</strong>
+            <span>favoritas</span>
+          </div>
         </div>
       </div>
     </section>

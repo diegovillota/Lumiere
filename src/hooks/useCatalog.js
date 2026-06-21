@@ -49,6 +49,7 @@ export function useCatalog() {
   const [items, setItems] = useState(getInitialItems);
   const [filtroTipo, setFiltroTipo] = useState("todos"); // todos | pelicula | serie
   const [filtroEstado, setFiltroEstado] = useState("todos"); // todos | pendiente | vista
+  const [soloFavoritos, setSoloFavoritos] = useState(false);
   const [busqueda, setBusqueda] = useState("");
 
   useEffect(() => {
@@ -66,6 +67,7 @@ export function useCatalog() {
       genero: genero.trim() || "Sin clasificar",
       estado: "pendiente",
       notaClub: null,
+      favorito: false,
     };
 
     setItems((prev) => [nuevoItem, ...prev]);
@@ -85,23 +87,44 @@ export function useCatalog() {
     );
   }
 
+  function toggleFavorito(id) {
+    setItems((prev) =>
+      prev.map((item) => (item.id === id ? { ...item, favorito: !item.favorito } : item))
+    );
+  }
+
+  /** Pone la nota del club; si se hace clic en la misma nota que ya
+   *  tenía, la limpia (vuelve a quedar sin valorar). */
+  function setNotaClub(id, nota) {
+    setItems((prev) =>
+      prev.map((item) =>
+        item.id === id
+          ? { ...item, notaClub: item.notaClub === nota ? null : nota }
+          : item
+      )
+    );
+  }
+
   const visibleItems = useMemo(() => {
     return items.filter((item) => {
       const coincideTipo = filtroTipo === "todos" || item.tipo === filtroTipo;
       const coincideEstado = filtroEstado === "todos" || item.estado === filtroEstado;
+      const coincideFavorito = !soloFavoritos || item.favorito;
       const coincideBusqueda = item.titulo
         .toLowerCase()
         .includes(busqueda.trim().toLowerCase());
-      return coincideTipo && coincideEstado && coincideBusqueda;
+      return coincideTipo && coincideEstado && coincideFavorito && coincideBusqueda;
     });
-  }, [items, filtroTipo, filtroEstado, busqueda]);
+  }, [items, filtroTipo, filtroEstado, soloFavoritos, busqueda]);
 
   const stats = useMemo(() => {
     const vistas = items.filter((i) => i.estado === "vista").length;
+    const favoritos = items.filter((i) => i.favorito).length;
     return {
       total: items.length,
       vistas,
       pendientes: items.length - vistas,
+      favoritos,
     };
   }, [items]);
 
@@ -111,10 +134,14 @@ export function useCatalog() {
     addItem,
     removeItem,
     toggleEstado,
+    toggleFavorito,
+    setNotaClub,
     filtroTipo,
     setFiltroTipo,
     filtroEstado,
     setFiltroEstado,
+    soloFavoritos,
+    setSoloFavoritos,
     busqueda,
     setBusqueda,
   };

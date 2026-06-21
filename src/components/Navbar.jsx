@@ -30,6 +30,10 @@ export default function Navbar({ stats, theme, onToggleTheme }) {
               <strong>{stats.vistas}</strong>
               <span>vistas</span>
             </div>
+            <div className="stat">
+              <strong>{stats.favoritos}</strong>
+              <span>favoritas</span>
+            </div>
           </div>
 
           <ThemeToggle theme={theme} onToggle={onToggleTheme} />

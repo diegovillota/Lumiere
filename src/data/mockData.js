@@ -14,7 +14,8 @@
  *  - anio: año de estreno
  *  - genero: género principal
  *  - estado: "pendiente" | "vista"
- *  - notaClub: valoración interna del cineclub (1-5), null si aún no se ve
+ *  - notaClub: valoración del club (1-5), null si aún no se valora
+ *  - favorito: si el club lo marcó como favorito (independiente del estado)
  */
 
 export const initialCatalog = [
@@ -26,6 +27,7 @@ export const initialCatalog = [
     genero: "Terror",
     estado: "vista",
     notaClub: 5,
+    favorito: true,
   },
   {
     id: 2,
@@ -35,6 +37,7 @@ export const initialCatalog = [
     genero: "Drama",
     estado: "vista",
     notaClub: 5,
+    favorito: true,
   },
   {
     id: 3,
@@ -44,6 +47,7 @@ export const initialCatalog = [
     genero: "Misterio",
     estado: "pendiente",
     notaClub: null,
+    favorito: false,
   },
   {
     id: 4,
@@ -53,6 +57,7 @@ export const initialCatalog = [
     genero: "Terror",
     estado: "pendiente",
     notaClub: null,
+    favorito: false,
   },
   {
     id: 5,
@@ -62,6 +67,7 @@ export const initialCatalog = [
     genero: "Drama histórico",
     estado: "vista",
     notaClub: 4,
+    favorito: false,
   },
   {
     id: 6,
@@ -71,5 +77,6 @@ export const initialCatalog = [
     genero: "Terror",
     estado: "pendiente",
     notaClub: null,
+    favorito: false,
   },
 ];

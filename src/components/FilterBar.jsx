@@ -8,6 +8,8 @@ export default function FilterBar({
   setFiltroTipo,
   filtroEstado,
   setFiltroEstado,
+  soloFavoritos,
+  setSoloFavoritos,
   busqueda,
   setBusqueda,
 }) {
@@ -51,6 +53,16 @@ export default function FilterBar({
         onClick={() => setFiltroEstado("vista")}
       >
         Vistas
+      </button>
+
+      <span style={{ width: 1, background: "var(--border)", margin: "0 4px" }} />
+
+      <button
+        className={`filter-chip ${soloFavoritos ? "active" : ""}`}
+        onClick={() => setSoloFavoritos(!soloFavoritos)}
+        aria-pressed={soloFavoritos}
+      >
+        ♥ Favoritas
       </button>
 
       <input

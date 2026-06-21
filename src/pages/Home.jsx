@@ -14,10 +14,14 @@ export default function Home({ catalog }) {
     addItem,
     removeItem,
     toggleEstado,
+    toggleFavorito,
+    setNotaClub,
     filtroTipo,
     setFiltroTipo,
     filtroEstado,
     setFiltroEstado,
+    soloFavoritos,
+    setSoloFavoritos,
     busqueda,
     setBusqueda,
   } = catalog;
@@ -35,11 +39,19 @@ export default function Home({ catalog }) {
         setFiltroTipo={setFiltroTipo}
         filtroEstado={filtroEstado}
         setFiltroEstado={setFiltroEstado}
+        soloFavoritos={soloFavoritos}
+        setSoloFavoritos={setSoloFavoritos}
         busqueda={busqueda}
         setBusqueda={setBusqueda}
       />
 
-      <CatalogGrid items={items} onToggleEstado={toggleEstado} onRemove={removeItem} />
+      <CatalogGrid
+        items={items}
+        onToggleEstado={toggleEstado}
+        onRemove={removeItem}
+        onToggleFavorito={toggleFavorito}
+        onSetNota={setNotaClub}
+      />
     </>
   );
 }
