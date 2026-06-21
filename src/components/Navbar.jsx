@@ -11,7 +11,7 @@ export default function Navbar({ stats, theme, onToggleTheme }) {
       <div className="marquee-inner">
         <div>
           <h1 className="marquee-title">
-            Nocturno <span>cineclub</span>
+            Lumiere
           </h1>
           <p className="marquee-tagline">catálogo interno · funciones de autor y terror clásico</p>
         </div>
