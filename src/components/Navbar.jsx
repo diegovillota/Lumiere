@@ -1,9 +1,11 @@
+import ThemeToggle from "./ThemeToggle";
+
 /**
  * Navbar — encabezado tipo "marquesina" del cineclub.
  * Componente de presentación puro: no maneja estado, solo recibe
- * las estadísticas a mostrar vía props.
+ * las estadísticas y el tema actual a mostrar vía props.
  */
-export default function Navbar({ stats }) {
+export default function Navbar({ stats, theme, onToggleTheme }) {
   return (
     <header className="marquee">
       <div className="marquee-inner">
@@ -14,19 +16,23 @@ export default function Navbar({ stats }) {
           <p className="marquee-tagline">catálogo interno · funciones de autor y terror clásico</p>
         </div>
 
-        <div className="stats-row" aria-label="Resumen del catálogo">
-          <div className="stat">
-            <strong>{stats.total}</strong>
-            <span>en catálogo</span>
+        <div className="marquee-controls">
+          <div className="stats-row" aria-label="Resumen del catálogo">
+            <div className="stat">
+              <strong>{stats.total}</strong>
+              <span>en catálogo</span>
+            </div>
+            <div className="stat">
+              <strong>{stats.pendientes}</strong>
+              <span>pendientes</span>
+            </div>
+            <div className="stat">
+              <strong>{stats.vistas}</strong>
+              <span>vistas</span>
+            </div>
           </div>
-          <div className="stat">
-            <strong>{stats.pendientes}</strong>
-            <span>pendientes</span>
-          </div>
-          <div className="stat">
-            <strong>{stats.vistas}</strong>
-            <span>vistas</span>
-          </div>
+
+          <ThemeToggle theme={theme} onToggle={onToggleTheme} />
         </div>
       </div>
     </header>
