@@ -1,10 +1,10 @@
-# Nocturno — catálogo de películas y series
+# Lumiere — catálogo de películas y series
 
 Maqueta inicial de una SPA en React + Vite para la Evaluación de la unidad de "Diseño e implementación de SPA". Pensada para crecer en evaluaciones futuras (persistencia, CRUD completo, integración con TMDB).
 
 ## 1. Cliente y problemática
 
-**Cliente (ficticio):** *Cineclub Nocturno*, un colectivo de cinéfilos de Santiago que organiza funciones temáticas semanales (cine de autor, terror clásico, series de culto) en un espacio comunitario.
+**Cliente (ficticio):** *Cineclub Nocturno*, un colectivo de cinéfilos de puerto montt que organiza funciones temáticas semanales (cine de autor, terror clásico, series de culto) en un espacio comunitario.
 
 **Contexto:** El club elige qué proyectar cada semana entre sus integrantes, y además algunos miembros van viendo series por su cuenta y quieren compartir su valoración con el resto.
 
@@ -31,13 +31,6 @@ Lo implementado en esta etapa (a nivel de estado en memoria, sin backend):
 - ✅ **Consultar**: ver el catálogo completo, filtrarlo por tipo/estado y buscarlo por nombre.
 - ✅ **Modificar**: cambiar el estado de un título entre "pendiente" y "vista".
 - ✅ **Eliminar**: sacar un título del catálogo.
-
-Lo planificado para evaluaciones futuras:
-
-- Persistencia real de los datos (backend o almacenamiento local).
-- Búsqueda y autocompletado de títulos contra la API de TMDB.
-- Ficha de detalle ampliada por título (sinopsis, póster, rating).
-- Valoración del club por título (actualmente es solo un campo de ejemplo, `notaClub`).
 
 ## 4. Planificación de integración externa (TMDB)
 
@@ -76,18 +69,8 @@ cinelog/
 
 La separación busca que el día que se conecte TMDB solo haya que tocar `services/tmdbApi.js` y `data/mockData.js` (o reemplazar este último), sin que el resto de los componentes cambie.
 
-## 6. Cómo correr el proyecto
 
-```bash
-npm install
-npm run dev
-```
-
-## 7. Evidencia del uso de IA
-
-Esta maqueta se construyó con apoyo de Claude (Anthropic) como asistente de desarrollo.
-
-**Prompt principal usado** (resumen del pedido real, ver historial de la conversación para el detalle completo):
+**Prompt principal usado**
 
 > "Quiero que hagas una maqueta de aplicación para un gestor de películas y series, expansible a futuro, voy a implementar la API de The Movie Database en el futuro, quiero solo lo necesario para poder seguir expandiendo el desarrollo mediante prompts."
 
@@ -98,12 +81,3 @@ Esta maqueta se construyó con apoyo de Claude (Anthropic) como asistente de des
 - Centralizar todo el estado del catálogo (agregar, eliminar, cambiar estado, filtrar) en un único hook (`useCatalog`) en vez de repartirlo entre componentes.
 - Una identidad visual propia para el tema (cineclub) en vez de un dashboard genérico: tarjetas con forma de entrada de cine como elemento distintivo.
 
-**Ajustes y decisiones tomadas por el estudiante:**
-
-- Se definió el cliente ficticio (Cineclub Nocturno) y su problemática real a partir de una necesidad concreta de coordinación de watchlist.
-- Se mantuvo la propuesta de la IA de no implementar la conexión a TMDB todavía, dejando solo la planificación documentada, tal como pide la pauta en el punto 6.
-- Próximos prompts se usarán de forma iterativa para ir agregando funcionalidades (persistencia, integración real con TMDB, ficha de detalle) sin rehacer la base actual.
-
-## 8. Explicación general del avance realizado
-
-En esta entrega se completó: definición del cliente y problemática, creación del proyecto React + Vite, estructura de carpetas, componentes reutilizables comunicados por props, manejo de estado con Hooks (`useState`, `useMemo`), las cuatro operaciones básicas del catálogo a nivel de estado en memoria, y la planificación (sin implementar) de la integración con TMDB. Queda pendiente para próximas evaluaciones: persistencia de datos, conexión real a TMDB, y ampliar el flujo de Git con ramas por funcionalidad a medida que se agreguen features nuevas.
