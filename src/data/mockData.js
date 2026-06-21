@@ -17,8 +17,6 @@
  *  - notaClub: valoración interna del cineclub (1-5), null si aún no se ve
  */
 
-let nextId = 7;
-
 export const initialCatalog = [
   {
     id: 1,
@@ -75,8 +73,3 @@ export const initialCatalog = [
     notaClub: null,
   },
 ];
-
-/** Genera el siguiente id disponible para un ítem nuevo agregado a mano. */
-export function getNextId() {
-  return nextId++;
-}
