@@ -26,7 +26,7 @@ export default function AddItemForm({ onAdd }) {
         <input
           id="titulo"
           type="text"
-          placeholder="Ej: Memorias de un caracol"
+          placeholder="Ej: El padrino"
           value={titulo}
           onChange={(e) => setTitulo(e.target.value)}
           required
@@ -38,6 +38,8 @@ export default function AddItemForm({ onAdd }) {
         <select id="tipo" value={tipo} onChange={(e) => setTipo(e.target.value)}>
           <option value="pelicula">Película</option>
           <option value="serie">Serie</option>
+          <option value="cortometraje">Cortometraje</option>
+          <option value="documental">Documental</option>
         </select>
       </div>
 

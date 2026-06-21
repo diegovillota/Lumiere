@@ -70,9 +70,18 @@ Lumiere/
 La separación busca que el día que se conecte TMDB solo haya que tocar `services/tmdbApi.js` y `data/mockData.js` (o reemplazar este último), sin que el resto de los componentes cambie.
 
 
-**Prompt principal usado**
+**Prompts**
 
-> "Quiero que hagas una maqueta de aplicación para un gestor de películas y series, expansible a futuro, voy a implementar la API de The Movie Database en el futuro, quiero solo lo necesario para poder seguir expandiendo el desarrollo mediante prompts."
+> "Quiero que hagas una maqueta de aplicación para un gestor de películas y series, expansible a futuro, voy a implementar la API de The Movie Database, quiero solo lo necesario para poder seguir expandiendo el desarrollo mediante prompts."
+
+"añade un feature para cambiar de modo claro a oscuro"
+
+"añade una seccion de perfil para usuarios"
+
+"Actualiza el codigo para que tenga memoria local y se mantengan los cambios al actualizar el navegador"
+
+"añade dos features mas, sistema de valoraciones y favoritos"
+
 
 **Recomendaciones obtenidas de la IA:**
 
